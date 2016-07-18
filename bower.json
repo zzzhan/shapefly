@@ -1,0 +1,26 @@
+{
+  "name": "shapefly",
+  "version": "0.1.0",
+  "authors": [
+    "zzzhan <chunzhan.he@gmail.com>"
+  ],
+  "description": "Drawing ready-made shapes on the web straight-through.",
+  "main": [],
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://shapefly.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "typed.js": "*",
+    "tinymce-plugin-shapefly": "https://github.com/zzzhan/tinymce-plugin-shapefly.git"
+  }
+}

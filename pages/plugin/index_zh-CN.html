@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="怎样使用Shapefly插件,在你的网站中整合Shapefly服务"><meta name="keywords" content="ready-made shapes,shapefly插件,jQuery插件,wordpress插件, tinymce插件"><title>插件 &middot; Shapefly</title><link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"><link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><link href="/css/shapefly.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><body><header class="navbar navbar-inverse navbar-fixed-top" id="top" role="banner"><div class="container"><div class="navbar-header"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a href="../" class="navbar-brand"></a></div><nav id="bs-navbar" class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href="/editor">开始使用</a></li><li><a href="/plugin">插件</a></li><li><a href="#contact">联系我们</a></li><li><a href="/about">关于</a></li></ul><ul class="nav navbar-nav navbar-right"><li class="user-sign active"><a href="/user/signup#/editor">注册</a></li><li class="user-sign"><a href="/user/signin#/editor">登录</a></li></ul></nav></div></header><div class="jumbotron text-left" role="header"><div class="container"><h1>插件</h1><span class="lead">怎样使用Shapefly插件,让用户直截了当地在你的网站上插入图形或流程图.让Shapefly为你的网络生活服务.</span></div></div><main class="container" id="content" role="main" tabindex="-1"><div class="row"><div class="col-md-9" role="main"><h2 id="heading11">在线编辑器中使用Shapefly</h2><p>假设你正在使用下面的在线编辑器,而此时你想插入一张流程图,你会怎么办?Shapefly插件让你只需点击上面的工具条中的按钮<img src="/favicon.ico" width="16" height="16">, 就可以访问Shapefly服务,画任何你想画的东西.最后,点击完成就可以在编辑器中插一张你所画的图片.</p><textarea id="demo" rows="10" cols="30">这是一个实例演示,请点击上面的工具条中的按钮<img src="/favicon.ico" width="16" height="16"></textarea><script type="text/javascript">window.onload = function(){
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+    };</script><h2 id="heading12">工作原理</h2><p>就象上面的实例,shapefly插件帮你打开<code>shapefly.com/editor</code>, 然后以图片的形式返回到你的网站, 一切就是这么地直截了当.甚至你还可以编辑你所画的图形,只需在编辑器中选中,点击上述的按钮,就可以打开Shapefly服务进行编辑. 因为所有在Shapefly中所画的图形或流程图都会有一个唯一的ID,所以当你在Shapefly完成你所画的,别忘了保存,以便日后使用或编辑!</p><h2 id="heading13">怎么使用</h2><p>我们为不同的应用场景,提供了便于使用的插件,日后还会提供更多合适的插件.请选择下面适合你的插件.</p><h3 id="h131_heading">无依赖纯javacript插件</h3><p><a href="https://github.com/zzzhan/shapefly-plugin">jshapefly-plugin</a>是一个无依赖,独立的javascript插件, 它只包含两个文件<code>shapefly-plugin.js</code>和<code>shapefly-plugin.html</code>.由于浏览器的同源策略问题, 使用前请将这两个文件放入你的网站同一目录下.然后,下面简单的代码就是你要做的:</p><div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="js/shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var btn = document.getElementById('sfBtn');
+  shapefly.plugin(btn, {
+    finish: function(img) {	  
+      //TODO:insert the image to your website
+	  document.getElementById('imgDiv').innerHTML = img;
+	}
+  });
+&lt;/script&gt;
+...
+
+&lt;input type="button" id="sfBtn" value="Shapefly" /&gt;</code></pre></div><p>使用bower安装</p><div class="highlight"><pre><code>bower install shapefly-plugin</code></pre></div><p><a class="btn btn-default" href="https://github.com/zzzhan/shapefly-plugin" role="button"><i class="fa fa-github"></i>&nbsp;了解更多 &raquo;</a></p><h3 id="h132_heading">tinyMCE插件</h3><p><a href="https://github.com/zzzhan/tinymce-plugin-shapefly">tinymce-plugin-shapefly</a>是为<a href="https://github.com/tinymce/tinymce">tinyMCE</a>提供的插件, 也是<code>shapefly-plugin</code>的一个扩展.该插件通过简单配置名称为<code>shapefly</code>, 就能在tinyMCE工具条出现一个shapefly按扭.配置示例:</p><div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script src="tinymce-plugin-shapefly.js"&gt;&lt;/script&gt;
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+&lt;/script&gt;
+...
+
+&lt;textarea id="tinymceDemo"&gt;&lt;/textarea&gt;</code></pre></div><p>使用bower安装</p><div class="highlight"><pre><code>bower install tinymce-plugin-shapefly</code></pre></div><p><a class="btn btn-default" href="https://github.com/zzzhan/tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;了解更多 &raquo;</a></p><h3 id="h133_heading">WordPress插件</h3><p><a href="https://github.com/zzzhan/wp-tinymce-plugin-shapefly">wp-tinymce-plugin-shapefly</a>是一个WordPress插件, 安装该插件能让WordPress编辑器在发布博客时通过在线访问shapefly服务,直截了当地插入图形或流程图.点击<a href="#">链接</a>进行下载, 然后安装到你的WordPress.</p><p><a class="btn btn-default" href="https://github.com/zzzhan/wp-tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;了解更多 &raquo;</a></p><h2 id="heading13">支持</h2><p>如果使用中遇到什么问题,请与我们联系.</p></div><div class="col-md-3" role="complementary"><nav class="sf-docs-sidebar hidden-print hidden-xs hidden-sm"><ul class="nav"><li><a href="#heading11">在线编辑器中使用Shapefly</a></li><li><a href="#heading12">工作原理</a></li><li><a href="#heading13">怎么使用</a><ul class="nav"><li><a href="#h131_heading">无依赖纯javacript插件</a></li><li><a href="#h132_heading">tinyMCE插件</a></li><li><a href="#h133_heading">WordPress插件</a></li></ul></li><li><a href="#heading13">支持</a></li></ul></nav></div></div></main><div class="container"><div class="row text-center" id="contact"><a href="emailto:shapefly@gmail.com" class="btn btn-default btn-outline btn-lg"><i class="fa fa-envelope"></i>&nbsp;联系我们</a> <a href="twitter.com/shapefly" class="btn btn-default btn-outline btn-lg"><i class="fa fa-twitter"></i>&nbsp;关注</a></div></div><footer class="footer" role="contentinfo"><div class="container"><div class="row"><div class="col-md-10"><ul class="list-inline text-muted"><li></li><li><a href="/plugin">插件</a></li><li><a href="/about">关于</a></li></ul></div><div class="col-md-2"><ul class="list-inline text-muted"><li class="dropup"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="语言"><i class="fa fa-language"></i><span class="caret"></span></a><ul class="dropdown-menu"></ul></li></ul></div></div></div></footer><script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script><script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script><script src="/js/tinymce-plugin-shapefly.js" type="text/javascript"></script></body></html>

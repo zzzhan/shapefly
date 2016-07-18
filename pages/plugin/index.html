@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Plugin of shapefly.How to import this plugin to your website."><meta name="keywords" content="jQuery plugin,ready-made shapes,shapefly plugins,wordpress plugin, tinyMCE plugin"><title>Plugin &middot; Shapefly</title><link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"><link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><link href="/css/shapefly.min.css" rel="stylesheet"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"></head><body><header class="navbar navbar-inverse navbar-fixed-top" id="top" role="banner"><div class="container"><div class="navbar-header"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a href="../" class="navbar-brand"></a></div><nav id="bs-navbar" class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href="/editor">Getting started</a></li><li><a href="/plugin">Plugin</a></li><li><a href="#contact">Contact</a></li><li><a href="/about">About</a></li></ul><ul class="nav navbar-nav navbar-right"><li class="user-sign active"><a href="/user/signup#/editor">Sign up</a></li><li class="user-sign"><a href="/user/signin#/editor">Sign in</a></li></ul></nav></div></header><div class="jumbotron text-left" role="header"><div class="container"><h1>Plugin</h1><span class="lead">Bring shapefly to your life.Lets users drawing ready-made shapes on your website straight-through.</span></div></div><main class="container" id="content" role="main" tabindex="-1"><div class="row"><div class="col-md-9" role="main"><h2 id="heading11">Shapefly plugin on <abbr title="What you see is what you get." class="initialism">WYSIWYG</abbr> editor</h2><p>Suppose you are using the following editor on your website.You want to insert a flowchart here right now.Then you click the button<img src="/favicon.ico" width="16" height="16"> on the toolbar above, then it will redirect to shapefly.com service for you to draw something and insert to the editor after finish.</p><textarea id="demo" rows="10" cols="30">Please insert a flowchart.</textarea><script type="text/javascript">window.onload = function(){
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+    };</script><h2 id="heading12">How it work</h2><p>As you know from the sample above, the plugin just redirect you to open <code>shapefly.com/editor</code>, all your drawing was on shapefly.com service, and it just return a image to your website after finish.Furthermore, if you want to change your drawing, you can select the image, then also click the plugin button.It redirects you to <code>shapefly.com/editor</code> for changing your drawing of the image.So don't forget to save your drawing on shapefly service after finish.</p><h2 id="heading13">How to use</h2><p>The following is the plugins for different scenarios, you can select a suitable one.</p><h3 id="h131_heading">Independent javascript</h3><p>The <a href="https://github.com/zzzhan/shapefly-plugin">shapefly-plugin</a> is a independent javascript liberary, which only includes two files <code>shapefly-plugin.js</code> and <code>shapefly-plugin.html</code>.For the security of cross-domain, you have to copy them to your owner website before using it.Then the following is really all you need to get going.</p><div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="js/shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var btn = document.getElementById('sfBtn');
+  shapefly.plugin(btn, {
+    finish: function(img) {	  
+      //TODO:insert the image to your website
+	  document.getElementById('imgDiv').innerHTML = img;
+	}
+  });
+&lt;/script&gt;
+...
+
+&lt;input type="button" id="sfBtn" value="Shapefly" /&gt;</code></pre></div><p>Or install with bower</p><div class="highlight"><pre><code>bower install shapefly-plugin</code></pre></div><p><a class="btn btn-default" href="https://github.com/zzzhan/shapefly-plugin" role="button"><i class="fa fa-github"></i>&nbsp;Learn more &raquo;</a></p><h3 id="h132_heading">Plugin for tinyMCE</h3><p>The <a href="https://github.com/zzzhan/tinymce-plugin-shapefly">tinymce-plugin-shapefly</a> is a <a href="https://github.com/tinymce">tinyMCE</a> plugin, which is a button on tinyMCE toolbar.Config the tinymce simply with the name <code>shapefly</code>.It is built base on the <code>shapefly-plugin</code>.See the following to learn about the config on tinyMCE.</p><div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script src="tinymce-plugin-shapefly.js"&gt;&lt;/script&gt;
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+&lt;/script&gt;
+...
+
+&lt;textarea id="tinymceDemo"&gt;&lt;/textarea&gt;</code></pre></div><p>Or install with bower</p><div class="highlight"><pre><code>bower install tinymce-plugin-shapefly</code></pre></div><p><a class="btn btn-default" href="https://github.com/zzzhan/tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;Learn more &raquo;</a></p><h3 id="h133_heading">Plugin for WordPress</h3><p>The <a href="https://github.com/zzzhan/wp-tinymce-plugin-shapefly">wp-tinymce-plugin-shapefly</a> is a WordPress plugin, which is built base on <code>tinymce-plugin-shapefly</code>.You can download from <a href="#">here</a>, then install it to your WordPress.</p><p><a class="btn btn-default" href="https://github.com/zzzhan/wp-tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;Learn more &raquo;</a></p><h2 id="heading13">Support</h2><p>Any problem, please feel free to contact us.</p></div><div class="col-md-3" role="complementary"><nav class="sf-docs-sidebar hidden-print hidden-xs hidden-sm"><ul class="nav"><li><a href="#heading11">Shapefly plugin on <abbr title="What you see is what you get." class="initialism">WYSIWYG</abbr> editor</a></li><li><a href="#heading12">How it work</a></li><li><a href="#heading13">How to use</a><ul class="nav"><li><a href="#h131_heading">Independent javascript</a></li><li><a href="#h132_heading">Plugin for tinyMCE</a></li><li><a href="#h133_heading">Plugin for WordPress</a></li></ul></li><li><a href="#heading13">Support</a></li></ul></nav></div></div></main><div class="container"><div class="row text-center" id="contact"><a href="emailto:shapefly@gmail.com" class="btn btn-default btn-outline btn-lg"><i class="fa fa-envelope"></i>&nbsp;Contact us</a> <a href="twitter.com/shapefly" class="btn btn-default btn-outline btn-lg"><i class="fa fa-twitter"></i>&nbsp;Follow us on Twitter</a></div></div><footer class="footer" role="contentinfo"><div class="container"><div class="row"><div class="col-md-10"><ul class="list-inline text-muted"><li>&copy; 2016 Shapefly</li><li><a href="/plugin">Plugin</a></li><li><a href="/about">About</a></li></ul></div><div class="col-md-2"><ul class="list-inline text-muted"><li class="dropup"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Language"><i class="fa fa-language"></i><span class="caret"></span></a><ul class="dropdown-menu"><li><a href="index.html">English</a></li><li><a href="index_zh-CN.html">简体中文</a></li></ul></li></ul></div></div></div></footer><script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script><script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script><script src="/js/tinymce-plugin-shapefly.js" type="text/javascript"></script></body></html>

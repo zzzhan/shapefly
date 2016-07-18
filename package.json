@@ -1,0 +1,22 @@
+{
+  "name": "shapefly",
+  "filename": "shapefly",
+  "version": "0.1.0",
+  "description": "Drawing ready-made shapes on the web straight-through.",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-dotpl": "^0.2.0",
+    "matchdep": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zzzhan/shapefly.git"
+  }
+}

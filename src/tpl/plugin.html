@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="col-md-9" role="main">
+  <h2 id="heading11">${h11_heading}</h2>
+  <p>${h11_summary}</p>
+  
+  <textarea id="demo" rows="10" cols="30">${content}</textarea>
+  <script type="text/javascript">
+    window.onload = function(){
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+    };
+  </script>  
+  <h2 id="heading12">${h12_heading}</h2>
+  <p>${h12_summary}</p>
+  <h2 id="heading13">${h13_heading}</h2>
+  <p>${h13_summary}</p>
+  <h3 id="h131_heading">${h131_heading}</h3>
+  <p>${h131_summary}</p>
+  <div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="js/shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var btn = document.getElementById('sfBtn');
+  shapefly.plugin(btn, {
+    finish: function(img) {	  
+      //TODO:insert the image to your website
+	  document.getElementById('imgDiv').innerHTML = img;
+	}
+  });
+&lt;/script&gt;
+...
+
+&lt;input type="button" id="sfBtn" value="Shapefly" /&gt;</code></pre></div>
+  <p>${install_with_bower}</p>
+  <div class="highlight"><pre><code>bower install shapefly-plugin</code></pre></div>
+  <p><a class="btn btn-default" href="https://github.com/zzzhan/shapefly-plugin" role="button"><i class="fa fa-github"></i>&nbsp;${detail-btn}</a></p>
+  <h3 id="h132_heading">${h132_heading}</h3>
+  <p>${h132_summary}</p>
+  <div class="highlight"><pre><code class="language-html" data-lang="html">&lt;script src="shapefly-plugin.js"&gt;&lt;/script&gt;
+&lt;script src="tinymce-plugin-shapefly.js"&gt;&lt;/script&gt;
+	  tinymce.init({
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste imagetools shapefly"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | link image shapefly",
+		autosave_ask_before_unload: false,
+		max_height: 200,
+		min_height: 160,
+		height : 180
+	  });
+&lt;/script&gt;
+...
+
+&lt;textarea id="tinymceDemo"&gt;&lt;/textarea&gt;</code></pre></div>
+  <p>${install_with_bower}</p>
+  <div class="highlight"><pre><code>bower install tinymce-plugin-shapefly</code></pre></div>
+  <p><a class="btn btn-default" href="https://github.com/zzzhan/tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;${detail-btn}</a></p>
+  <h3 id="h133_heading">${h133_heading}</h3>
+  <p>${h133_summary}</p>
+  <p><a class="btn btn-default" href="https://github.com/zzzhan/wp-tinymce-plugin-shapefly" role="button"><i class="fa fa-github"></i>&nbsp;${detail-btn}</a></p>
+  <h2 id="heading13">${h14_heading}</h2>
+  <p>${h14_summary}</p>
+  </div>
+  <div class="col-md-3" role="complementary">
+    <nav class="sf-docs-sidebar hidden-print hidden-xs hidden-sm">
+	  <ul class="nav">
+		<li>
+          <a href="#heading11">${h11_heading}</a>
+		</li>
+		<li>
+          <a href="#heading12">${h12_heading}</a>
+		</li>
+		<li>
+          <a href="#heading13">${h13_heading}</a>
+		  <ul class="nav">
+			<li>
+              <a href="#h131_heading">${h131_heading}</a>
+			</li>
+			<li>
+              <a href="#h132_heading">${h132_heading}</a>
+			</li>
+			<li>
+              <a href="#h133_heading">${h133_heading}</a>
+			</li>
+		  </ul>
+		</li>
+		<li>
+          <a href="#heading13">${h14_heading}</a>
+		</li>
+	  </ul>
+	</nav>
+  </div>
+</div>
