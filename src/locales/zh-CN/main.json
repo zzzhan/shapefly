@@ -16,6 +16,7 @@
 "contacts":[{"text":"联系我们","link":"emailto:shapefly@gmail.com","icon":"fa fa-envelope"},{"text":"关注","link":"twitter.com/shapefly","icon":"fa fa-twitter"}],
 "lang_title":"语言",
 "top_menu":[{"link":"/editor","name":"开始使用"},{"link":"/plugin","name":"插件"},{"link":"#contact","name":"联系我们"},{"link":"/about","name":"关于"}],
+"share_title":"分享",
 "bottom_menu":[{"link":"/plugin","name":"插件"},{"link":"/about","name":"关于"}],
 "getting_started":"现在开始使用 &raquo;",
 "heading":"Shapefly",
