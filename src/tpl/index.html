@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<tpl for="hreflangs">
+	<link rel="alternate" hreflang="${hreflang}" href="${href}" />
+	</tpl>
 	<link href="${cdn_bootstrap_css}" rel="stylesheet">
 	<link href="${cdn_fontawesome}" rel="stylesheet">
 	<link href="dist/css/shapefly.min.css" rel="stylesheet">
