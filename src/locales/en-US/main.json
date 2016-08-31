@@ -8,9 +8,9 @@
 "brand_name":"Shapefly",
 "site_name":"Shapefly Diagram",
 "prod_url":"http://d.shapefly.com",
-"description":"Shapefly Diagram a web-based diagram editor,features creating vector graphics &amp; dozen of shapes such as retangles, circles, lines, arrows, flowchart and callouts &amp; Converting canvas to SVG &amp; Power your website editor inserting diagrams.",
-"title":"Shapefly Diagram | Must Have Free Software Online About Diagram, Flowcharts &amp; Shapes",
-"share_desc":"Shapefly,a must have free software about diagram,flowcharts,same as Microsoft Visio,draw.io",
+"description":"Shapefly,a web-based flowchart maker, diagram editor,features creating vector graphics &amp; dozen of shapes such as retangles, circles, lines, arrows, flowchart and callouts &amp; Exporting SVG|JPG|PNG &amp; Providing widget for online editor inserting diagrams.The next diagram software beyoud the Microsoft Viso, draw.io, gliffy.com",
+"title":"Shapefly | Must Have Free Software Online About Diagram, Flowcharts &amp; Shapes",
+"share_desc":"Shapefly|Must Have Free Flowchart Maker,Online Diagram Software",
 "share_img":"http://shapefly.com/dist/img/shapefly_600x321.png",
 "home_url":"http://shapefly.com",
 "signup":"Sign up",
@@ -28,5 +28,5 @@
 "getting_started":"Get started now &raquo;",
 "heading":"Shapefly",
 "lead":"Drawing ready-made shapes on the web",
-"typed_text":"straight-through,smoothly,cross-platform"
+"typed_text":"straight-through,cross-platform,convert SVG"
 }

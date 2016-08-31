@@ -5,11 +5,11 @@
 "cdn_fontawesome":"http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css",
 "cdn_bootstrap_js":"http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js",
 "locale":"zh_CN",
-"site_name":"Shapefly制图",
+"site_name":"Shapefly画图",
 "prod_url":"http://d.shapefly.com/index_zh-CN.html",
-"description":"Shapefly制图是一个基HTML5的在线画图工具,支持矢量图 &amp; 大量图形如长方形,圆形,线条,箭头,流程图和标注图等 &amp; Canvas转SVG &amp; 可以让你的网站编辑器直截了当插入图形.",
-"title":"Shapefly制图 | 免费必备在线软件-画图,流程图,各种图形",
-"share_desc":"Shapefly制图一个跟Microsoft Visio一样,关于画图,流程图,各种图形的免费在线必备软件",
+"description":"Shapefly,是一个基HTML5的在线画图工具,流程图软件.支持矢量图 &amp; 大量图形如长方形,圆形,线条,箭头,流程图和标注图等 &amp; 支持导出SVG/JPG/PNG &amp; 提供插件,让在线编辑器支持插入图形,在线制作流程图.是继Microsoft Viso,draw.io,gliffy.com又一个图形软件.",
+"title":"Shapefly | 免费在线画图工具 &amp; 流程图软件",
+"share_desc":"Shapefly免费在线画图工具|在页面上插入图形,制作流程图,并支持导出",
 "home_url":"http://shapefly.com/index_zh-CN.html",
 "signup":"注册",
 "signin":"登录",
@@ -23,5 +23,5 @@
 "getting_started":"现在开始使用 &raquo;",
 "heading":"Shapefly",
 "lead":"让你在页面上插入图形,制作流程图",
-"typed_text":"直截了当,轻松简单,跨平台"
+"typed_text":"直截了当,跨平台,导出SVG"
 }
